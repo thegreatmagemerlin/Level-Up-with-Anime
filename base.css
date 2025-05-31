@@ -1,0 +1,153 @@
+:root {
+  --bg-color: #fff;
+  --card-bg: #eee;
+  --accent: #000;
+  --text: #000;
+  --accent-hover: #333;
+  --bg-img: none;
+}
+/* Overall layout: column structure */
+
+body{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+    background-color: var(--bg-color);
+}
+
+body::before {
+  background-image: var(--bg-img);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Top bar with dropdown aligned left */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em 2em;
+}
+
+/* Centered pomodoro block */
+.pomodoro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 75px var(--accent);
+}
+
+/* Timer display */
+.timer {
+  font-size: 60px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+  font-size: 20px;
+  padding: 10px 25px;
+  margin: 2px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--text);
+  color: var(--card-bg);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Dropdown styles */
+.dropdown {
+  min-width: 15em;
+  position: relative;
+}
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background: #2a2f3b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #2a2f3b solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.select:hover {
+  background: #323741;
+}
+
+.select-clicked {
+  border: 2px #26489a solid;
+  box-shadow: 0 0 0.8em #26489a;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: #323741;
+  border: 1px #363a43 solid;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  color: #9fa5b5;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.menu li:hover {
+  background: #2a2d35;
+}
+
+.active {
+  background: #23242a;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}

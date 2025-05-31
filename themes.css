@@ -1,0 +1,51 @@
+:root {
+  --bg-color: #212121;
+  --card-bg: #2E2E2E;
+  --accent: #FFEB3B;
+  --accent-hover: #FDD835;
+  --text: #FFEB3B;
+}
+
+.theme-batman {
+  --bg-color: #151515;      /* Full background */
+  --card-bg: #0e0e0e;       /* Card background */
+  --accent: #FFEB3B;        /* button glow */
+  --text: #FFEB3B;        /* text and buttons */
+  --accent-hover: #dcb300;  /* All Hover */
+
+}
+
+.theme-zoro {
+  --bg-color: #001002;      /* Full background */
+  --card-bg: #012b07;       /* Card background */
+  --accent: #28b61b;        /* Text, button glow */
+  --text: #28b61b;          /* text and buttons */
+  --accent-hover: #1d8413;  /* All Hover */
+}
+
+.theme-iron-man {
+  --bg-color: #200705;         /* Full background */
+  --card-bg: #450704;          /* Card background */
+  --accent: #43f7f1;           /* Text, button glow */
+  --text: #aa862c;             /* text and buttons */
+  --accent-hover: #765d1e;     /* All Hover */
+  --bg-img: url("ironman.jpg");/* Background Image */
+}
+
+.theme-luffy {
+  --bg-color: #300b0b;      /* Full background */
+  --card-bg: #6f1313;       /* Card background */
+  --accent: #edb138;        /* Text, button glow */
+  --text: #657cbd;          /* text and buttons */
+  --accent-hover: #4c5e8f;  /* All Hover */
+}
+
+.theme-spiderman {
+  --bg-color: #4e0101;         /* Full background */
+  --card-bg: #8e0606;          /* Card background */
+  --accent: #007fd7;           /* Text, button glow */
+  --text: 	#3996d8;           /* text and buttons */
+  --accent-hover: 	#2078b7;   /* All Hover */
+  --bg-img: url("spiderman.jpg");/* Background Image */
+}
+
