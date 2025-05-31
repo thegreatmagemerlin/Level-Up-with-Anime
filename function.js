@@ -7,6 +7,7 @@ var tMin = document.getElementById("mins");
 var tSec = document.getElementById("secs");
 start.addEventListener("click", start_timer);
 reset.addEventListener("click", reset_timer);
+let currentTheme = 'batman.mp3'; // Default theme name
 
 var startHour = tHour.textContent;
 var startMin = tMin.textContent;
@@ -14,6 +15,13 @@ var startSec = tSec.textContent;
 
 let timerInterval;
 let isRunning = false;
+
+function playThemeSound() {
+    const audio = new Audio(`${currentTheme}.mp3`);
+    audio.play().catch(error => {
+        console.error("Error playing audio:", error);
+    });
+}
 
 function reset_timer() {
     if (isRunning){
@@ -49,6 +57,7 @@ function start_timer () {
                 clearInterval(timerInterval);
                 start.textContent = "start";
                 isRunning = false;
+                playThemeSound();
                 return;
             }
             hours--;
@@ -72,47 +81,46 @@ function start_timer () {
 }
 
 // Dropdown menu code
-    //get all dropdowns from the document
-    // Only one dropdown assumed
-    const dropdown = document.querySelector('.dropdown');
-    const select = dropdown.querySelector('.select');
-    const caret = dropdown.querySelector('.caret');
-    const menu = dropdown.querySelector('.menu');
-    const options = dropdown.querySelectorAll('.menu li');
-    const selected = dropdown.querySelector('.selected');
-    const themeLink = document.getElementById("theme-style");
+//get all dropdowns from the document
+// Only one dropdown assumed
+const dropdown = document.querySelector('.dropdown');
+const select = dropdown.querySelector('.select');
+const caret = dropdown.querySelector('.caret');
+const menu = dropdown.querySelector('.menu');
+const options = dropdown.querySelectorAll('.menu li');
+const selected = dropdown.querySelector('.selected');
 
-    select.addEventListener('click', () => {
-        select.classList.toggle('select-clicked');
-        caret.classList.toggle('caret-rotate');
-        menu.classList.toggle('menu-open');
+select.addEventListener('click', () => {
+    select.classList.toggle('select-clicked');
+    caret.classList.toggle('caret-rotate');
+    menu.classList.toggle('menu-open');
+});
+
+// Close menu and set theme style once option is selected
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        // Update the dropdown label
+        selected.innerText = `Theme: ${option.innerText}`;
+        select.classList.remove('select-clicked');
+        caret.classList.remove('caret-rotate');
+        menu.classList.remove('menu-open');
+
+        options.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+
+        // ✅ Dynamically change the stylesheet
+        document.body.className = ''; // Remove previous theme class
+        currentTheme = option.innerText.trim().toLowerCase(); // Global variable
+        document.body.classList.add(`theme-${currentTheme}`);
     });
+});
 
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            // Update the dropdown label
-            selected.innerText = `Theme: ${option.innerText}`;
-            select.classList.remove('select-clicked');
-            caret.classList.remove('caret-rotate');
-            menu.classList.remove('menu-open');
-
-            options.forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-
-            // ✅ Dynamically change the stylesheet
-            document.body.className = ''; // Remove previous theme class
-            const themeName = option.innerText.trim().toLowerCase(); // assumes file names are lowercase
-            document.body.classList.add(`theme-${themeName}`);
-
-        });
-    });
-    
-    // Close dropdown if clicked outside
-    document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) {
-            select.classList.remove('select-clicked');
-            caret.classList.remove('caret-rotate');
-            menu.classList.remove('menu-open');
-        }
-    });
+// Close dropdown if clicked outside
+document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+        select.classList.remove('select-clicked');
+        caret.classList.remove('caret-rotate');
+        menu.classList.remove('menu-open');
+    }
+});
 

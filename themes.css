@@ -7,20 +7,22 @@
 }
 
 .theme-batman {
-  --bg-color: #151515;      /* Full background */
-  --card-bg: #0e0e0e;       /* Card background */
-  --accent: #FFEB3B;        /* button glow */
-  --text: #FFEB3B;        /* text and buttons */
-  --accent-hover: #dcb300;  /* All Hover */
+  --bg-color: #1f1f1f;        /* Full background */
+  --card-bg: #0e0e0e;         /* Card background */
+  --accent: #FFEB3B;          /* button glow */
+  --text: #fdee62;            /* text and buttons */
+  --accent-hover: #d7bf53;    /* All Hover */
+  --bg-img: url("batman.jpeg"); /* Background Image */
 
 }
 
 .theme-zoro {
-  --bg-color: #001002;      /* Full background */
-  --card-bg: #012b07;       /* Card background */
-  --accent: #28b61b;        /* Text, button glow */
-  --text: #28b61b;          /* text and buttons */
-  --accent-hover: #1d8413;  /* All Hover */
+  --bg-color: #000000;     /* Full background */
+  --card-bg: #012b07;      /* Card background */
+  --accent: #28b61b;       /* Text, button glow */
+  --text: #80ce79;         /* text and buttons */
+  --accent-hover: #3bac31; /* All Hover */
+  --bg-img: url("zoro.png"); /* Background Image */
 }
 
 .theme-iron-man {
@@ -33,19 +35,28 @@
 }
 
 .theme-luffy {
-  --bg-color: #300b0b;      /* Full background */
-  --card-bg: #6f1313;       /* Card background */
+  --bg-color: #160505;      /* Full background */
+  --card-bg: #560303;       /* Card background */
   --accent: #edb138;        /* Text, button glow */
   --text: #657cbd;          /* text and buttons */
   --accent-hover: #4c5e8f;  /* All Hover */
+  --bg-img: url("luffy.png"); /* Background Image */
 }
 
 .theme-spiderman {
-  --bg-color: #4e0101;         /* Full background */
-  --card-bg: #8e0606;          /* Card background */
+  --bg-color: #100000ef;         /* Full background */
+  --card-bg: #6f0606;          /* Card background */
   --accent: #007fd7;           /* Text, button glow */
   --text: 	#3996d8;           /* text and buttons */
   --accent-hover: 	#2078b7;   /* All Hover */
-  --bg-img: url("spiderman.jpg");/* Background Image */
+  --bg-img: url("spiderman.png");/* Background Image */
 }
 
+.theme-reyna {
+  --bg-color: #190916;         /* Full background */
+  --card-bg: 	#40193c;          /* Card background */
+  --accent: #c55bfc;           /* Text, button glow */
+  --text: 	#a0775a;           /* text and buttons */
+  --accent-hover: 	#7f5e47;   /* All Hover */
+  --bg-img: url("reyna.jpeg");/*Background Image*/
+}
