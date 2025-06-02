@@ -1,7 +1,5 @@
 :root {
-  --bg-color: #fff;
-  --card-bg: #eee;
-  --accent: #000;
+  --bg-color: #212121;
   --text: #000;
   --accent-hover: #333;
   --bg-img: none;
@@ -50,16 +48,17 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--card-bg);
   margin: auto;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 0 75px var(--accent);
+  width: 20vw;
+  max-width: 400px;
+  aspect-ratio: 2;
 }
 
 /* Timer display */
 .timer {
-  font-size: 60px;
+  font-size: 80px;
   color: var(--text);
   margin-bottom: 20px;
 }
@@ -72,10 +71,14 @@ button {
   border: none;
   border-radius: 10px;
   background-color: var(--text);
-  color: var(--card-bg);
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 90px;
 }
+
+/* #mode {
+  width: 100px;
+} */
 
 button:hover {
   background-color: var(--accent-hover);

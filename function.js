@@ -2,19 +2,24 @@
 var start = document.getElementById("start");
 var timer = document.getElementById("timer");
 var reset = document.getElementById("reset");
+var modeButton = document.getElementById("mode");
+var tabname = document.getElementById("tabname");
+
 var tHour = document.getElementById("hours");
 var tMin = document.getElementById("mins");
 var tSec = document.getElementById("secs");
 start.addEventListener("click", start_timer);
 reset.addEventListener("click", reset_timer);
-let currentTheme = 'batman.mp3'; // Default theme name
+modeButton.addEventListener("click", toggleMode);
+let currentTheme = 'spiderman'; // Default theme name
 
-var startHour = tHour.textContent;
-var startMin = tMin.textContent;
-var startSec = tSec.textContent;
+var startHour = parseInt(tHour.textContent);
+var startMin = parseInt(tMin.textContent);
+var startSec = parseInt(tSec.textContent);
 
 let timerInterval;
 let isRunning = false;
+let mode = "study";
 
 function playThemeSound() {
     const audio = new Audio(`${currentTheme}.mp3`);
@@ -23,14 +28,40 @@ function playThemeSound() {
     });
 }
 
+function toggleMode() {
+  if (mode === "rest") {
+    mode = "study";
+    modeButton.textContent = "rest";
+    update_timer(0, 25, 0);
+  } else {
+    mode = "rest";
+    modeButton.textContent = "study";
+    update_timer(0, 5, 0);
+  }
+}
+
 function reset_timer() {
     if (isRunning){
         start_timer()
     }
-    tHour.textContent = startHour
-    tMin.textContent = startMin
-    tSec.textContent = startSec
+    update_timer(startHour, startMin, startSec);
+    tabname.textContent = "Study Timer"
+    toggleMode()
+    toggleMode()
 }
+
+function update_timer(hours, minutes, seconds) {
+    if (hours !=0 && hours !="") {
+    tHour.textContent = `${String(hours).padStart(2, "0")}:`
+    tabname.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    } else {
+    tHour.textContent = "";
+    tabname.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    }
+    tMin.textContent = `${String(minutes).padStart(2, "0")}:`
+    tSec.textContent = `${String(seconds).padStart(2, "0")}`
+}
+
 function start_timer () {
 
     // Stop timer if it running
@@ -42,10 +73,9 @@ function start_timer () {
     }
 
     // Get minutes and seconds from timer
-    let hours = parseInt(tHour.textContent, 10);
-    let minutes = parseInt(tMin.textContent, 10);
-    let seconds = parseInt(tSec.textContent, 10);
-
+    let hours = parseInt(tHour.textContent, 10) || 0;
+    let minutes = parseInt(tMin.textContent, 10) || 0;
+    let seconds = parseInt(tSec.textContent, 10) || 0;
 
     // Start timer and reduce seconds and minutes
     start.textContent = "stop"
@@ -58,6 +88,7 @@ function start_timer () {
                 start.textContent = "start";
                 isRunning = false;
                 playThemeSound();
+                toggleMode();
                 return;
             }
             hours--;
@@ -70,15 +101,11 @@ function start_timer () {
         }
 
         // Update timer on HTML
-
-        tHour.textContent = `${String(hours).padStart(2, "0")}`
-        tMin.textContent = `${String(minutes).padStart(2, "0")}`
-        tSec.textContent = `${String(seconds).padStart(2, "0")}`
-
-        // timer.textContent = 
-        // `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+        update_timer(hours, minutes, seconds);
     }, 1000);
 }
+
+
 
 // Dropdown menu code
 //get all dropdowns from the document

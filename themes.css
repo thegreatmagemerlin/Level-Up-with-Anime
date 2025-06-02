@@ -1,62 +1,43 @@
 :root {
   --bg-color: #212121;
-  --card-bg: #2E2E2E;
-  --accent: #FFEB3B;
-  --accent-hover: #FDD835;
-  --text: #FFEB3B;
+  --text: 	#3996d8;           /* text and buttons */
+  --accent-hover: 	#2078b7;   /* All Hover */
+  --bg-img: url("spiderman.png");/* Background Image */
 }
 
 .theme-batman {
-  --bg-color: #1f1f1f;        /* Full background */
-  --card-bg: #0e0e0e;         /* Card background */
-  --accent: #FFEB3B;          /* button glow */
-  --text: #fdee62;            /* text and buttons */
-  --accent-hover: #d7bf53;    /* All Hover */
+  --text: #f8e64d;            /* text and buttons */
+  --accent-hover: #ceb547;    /* All Hover */
   --bg-img: url("batman.jpeg"); /* Background Image */
 
 }
 
 .theme-zoro {
-  --bg-color: #000000;     /* Full background */
-  --card-bg: #012b07;      /* Card background */
-  --accent: #28b61b;       /* Text, button glow */
   --text: #80ce79;         /* text and buttons */
   --accent-hover: #3bac31; /* All Hover */
   --bg-img: url("zoro.png"); /* Background Image */
 }
 
 .theme-iron-man {
-  --bg-color: #200705;         /* Full background */
-  --card-bg: #450704;          /* Card background */
-  --accent: #43f7f1;           /* Text, button glow */
   --text: #aa862c;             /* text and buttons */
   --accent-hover: #765d1e;     /* All Hover */
   --bg-img: url("ironman.jpg");/* Background Image */
 }
 
 .theme-luffy {
-  --bg-color: #160505;      /* Full background */
-  --card-bg: #560303;       /* Card background */
-  --accent: #edb138;        /* Text, button glow */
   --text: #657cbd;          /* text and buttons */
   --accent-hover: #4c5e8f;  /* All Hover */
   --bg-img: url("luffy.png"); /* Background Image */
 }
 
 .theme-spiderman {
-  --bg-color: #100000ef;         /* Full background */
-  --card-bg: #6f0606;          /* Card background */
-  --accent: #007fd7;           /* Text, button glow */
   --text: 	#3996d8;           /* text and buttons */
   --accent-hover: 	#2078b7;   /* All Hover */
   --bg-img: url("spiderman.png");/* Background Image */
 }
 
 .theme-reyna {
-  --bg-color: #190916;         /* Full background */
-  --card-bg: 	#40193c;          /* Card background */
-  --accent: #c55bfc;           /* Text, button glow */
-  --text: 	#a0775a;           /* text and buttons */
-  --accent-hover: 	#7f5e47;   /* All Hover */
+  --text: 	#fb00ff;           /* text and buttons */
+  --accent-hover: 	#b000b3;   /* All Hover */
   --bg-img: url("reyna.jpeg");/*Background Image*/
 }
