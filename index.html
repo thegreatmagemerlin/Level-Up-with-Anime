@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="base.css">
-        <link rel="stylesheet" href="themes.css">
-        <title id="tabname">Study Timer</title>
-    </head>
-    <body>
-        <!-- Navigation and Settings-->>
-        <div class="top-bar">
-            <div class="dropdown">
-                <div class="select">
-                    <span class="selected">Theme</span>
-                        <div class="caret"></div>
-                </div>
-                <ul class="menu">
-                    <li>Zoro</li>
-                    <li>Luffy</li>
-                    <li>Spiderman</li>
-                    <li>Batman</li>
-                    <li>Iron-man</li>
-                    <li>Reyna</li>
-
-                </ul>
+<head>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="themes.css">
+    <title id="tabname">Study Timer</title>
+</head>
+<body>
+    <!-- Navigation and Settings -->
+    <div class="top-bar">
+        <div class="dropdown theme-dropdown">
+            <div class="select">
+                <span class="selected">Theme</span>
+                <div class="caret"></div>
             </div>
+            <ul class="menu">
+                <li>Zoro</li>
+                <li>Luffy</li>
+                <li>Space</li>
+                <li>Forest</li>
+                <li>Spiderman</li>
+                <li>Batman</li>
+                <li>Iron-man</li>
+                <li>Reyna</li>
+            </ul>
         </div>
 
-        <!-- Timer -->>
-        <div class="pomodoro">
-            <p class="timer" id="timer">
-                <span id="hours">00:</span><span id="mins">25:</span><span id="secs">00</span>
-            </p>
-            <div class="controls">
-                <button id="start">start</button>
-                <button id="reset">reset</button>
-                <button id="mode">rest </button>
+        <div class="dropdown diff-dropdown">
+            <div class="select">
+                <span class="selected">Normal</span>
+                <div class="caret"></div>
             </div>
+            <ul class="menu">
+                <li data-value="easy">Easy</li>
+                <li data-value="normal" class="active">Normal</li>
+                <li data-value="serious">Serious</li>
+                <li data-value="hardcore">Hardcore</li>
+            </ul>
+        </div>
+        
+        <div class="dropdown mode-dropdown">
+            <div class="select">
+                <span class="selected">Study</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>Study</li>
+                <li>Break</li>
+            </ul>
         </div>
 
-        <script src="function.js"></script>
-        <audio id="theme-audio" src=""></audio>
-    </body>
+    </div>
+            <div class="volume-control">
+            <label for="volume-slider">Volume: <span id="volume-value">100%</span></label>
+            <input type="range" id="volume-slider" min="0" max="100" value="100" />
+        </div>
+
+    <!-- Timer -->
+    <div class="pomodoro">
+        <p class="timer" id="timer">
+            <span id="hours"></span><span id="mins">25:</span><span id="secs">00</span>
+        </p>
+        <div class="controls">
+            <button id="start">start</button>
+            <button id="reset">reset</button>
+        </div>
+    </div>
+
+    <script src="function.js"></script>
+    <audio id="theme-audio" src=""></audio>
+</body>
 </html>

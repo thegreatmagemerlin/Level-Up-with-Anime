@@ -1,43 +1,57 @@
 :root {
   --bg-color: #212121;
-  --text: 	#3996d8;           /* text and buttons */
+  --button: 	#3996d8;           /* text and buttons */
   --accent-hover: 	#2078b7;   /* All Hover */
   --bg-img: url("spiderman.png");/* Background Image */
 }
 
 .theme-batman {
-  --text: #f8e64d;            /* text and buttons */
+  --button: #f8e64d;            /* text and buttons */
   --accent-hover: #ceb547;    /* All Hover */
   --bg-img: url("batman.jpeg"); /* Background Image */
-
 }
 
 .theme-zoro {
-  --text: #80ce79;         /* text and buttons */
+  --button: #80ce79;         /* text and buttons */
   --accent-hover: #3bac31; /* All Hover */
   --bg-img: url("zoro.png"); /* Background Image */
 }
 
 .theme-iron-man {
-  --text: #aa862c;             /* text and buttons */
+  --button: #aa862c;             /* text and buttons */
   --accent-hover: #765d1e;     /* All Hover */
   --bg-img: url("ironman.jpg");/* Background Image */
 }
 
 .theme-luffy {
-  --text: #657cbd;          /* text and buttons */
+  --button: #657cbd;          /* text and buttons */
   --accent-hover: #4c5e8f;  /* All Hover */
   --bg-img: url("luffy.png"); /* Background Image */
 }
 
 .theme-spiderman {
-  --text: 	#3996d8;           /* text and buttons */
+  --button: 	#3996d8;           /* text and buttons */
   --accent-hover: 	#2078b7;   /* All Hover */
+  --text: #8a0f0f;
   --bg-img: url("spiderman.png");/* Background Image */
 }
 
 .theme-reyna {
-  --text: 	#fb00ff;           /* text and buttons */
+  --button: 	#fb00ff;           /* text and buttons */
   --accent-hover: 	#b000b3;   /* All Hover */
   --bg-img: url("reyna.jpeg");/*Background Image*/
+}
+
+.theme-space {
+  --button: #1d0ec2;            /* text and buttons */
+  --accent-hover: #1453c8;    /* All Hover */
+  --text: #cbf3ff;
+  --bg-img: url("space.png"); /* Background Image */
+}
+
+.theme-forest {
+  --button: #0eac00;            /* text and buttons */
+  --accent-hover: #43cd55;    /* All Hover */
+  --text: #fff8ee;
+  --bg-img: url("forest.png"); /* Background Image */
 }
